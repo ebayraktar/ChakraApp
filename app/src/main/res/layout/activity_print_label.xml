@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.PrintLabelActivity">
+
+    <TextView
+        android:id="@+id/tvSaleGroupName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/etBarcode"
+        android:layout_width="256dp"
+        android:layout_height="48dp"
+        android:hint="@string/barcode"
+        android:imeOptions="actionDone"
+        android:importantForAutofill="no"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvSaleGroupName" />
+
+    <ScrollView
+        android:id="@+id/svContent"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="16dp"
+        app:layout_constraintBottom_toTopOf="@id/cvPrint"
+        app:layout_constraintTop_toBottomOf="@id/etBarcode">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tvCurrencyInformation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Kur Bilgileri Alınıyor..."
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvCurrencyName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Kur Adı"
+                app:layout_constraintEnd_toStartOf="@id/tvCurrencyNameValue"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvCurrencyInformation" />
+
+            <TextView
+                android:id="@+id/tvCurrencyNameValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvCurrencyInformation" />
+
+
+            <TextView
+                android:id="@+id/tvCurrencyBuying"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Alış"
+                app:layout_constraintEnd_toStartOf="@id/tvCurrencyBuyingValue"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvCurrencyNameValue" />
+
+            <TextView
+                android:id="@+id/tvCurrencyBuyingValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvCurrencyNameValue" />
+
+
+            <TextView
+                android:id="@+id/tvCurrencySelling"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Satış"
+                app:layout_constraintEnd_toStartOf="@id/tvCurrencySellingValue"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvCurrencyBuyingValue" />
+
+            <TextView
+                android:id="@+id/tvCurrencySellingValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvCurrencyBuyingValue" />
+
+
+            <TextView
+                android:id="@+id/tvCurrencyType"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Tür"
+                app:layout_constraintEnd_toStartOf="@id/tvCurrencyTypeValue"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvCurrencySelling" />
+
+            <TextView
+                android:id="@+id/tvCurrencyTypeValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvCurrencySelling" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvPrint"
+        android:layout_width="0dp"
+        android:layout_height="46dp"
+        android:layout_margin="8dp"
+        app:cardBackgroundColor="@color/gray"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="3dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/cvBack"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/print"
+            android:textColor="@color/black" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvBack"
+        android:layout_width="0dp"
+        android:layout_height="46dp"
+        android:layout_margin="8dp"
+        app:cardBackgroundColor="@color/gray"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="3dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/cvPrint">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/back"
+            android:textColor="@color/black" />
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
